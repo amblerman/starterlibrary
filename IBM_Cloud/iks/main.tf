@@ -1,5 +1,5 @@
 provider "ibm" {
-  version = "~> 0.17.1"
+  version = ">= 0.17.0"
     #softlayer_username = "${var.sl_username}"
     #softlayer_api_key = "${var.sl_api_key}"
 }
