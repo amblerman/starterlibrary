@@ -1,6 +1,9 @@
-
+provider "ibm" {
+    #softlayer_username = "${var.sl_username}"
+    #softlayer_api_key = "${var.sl_api_key}"
+}
 module "cluster" {
-  source  = "git::https://github.com/IBM-CAMHub-Open/starterlibrary.git?ref=2.2//IBM_Cloud/modules/ibm_cloud_kubernetes_cluster"
+  source  = "git::https://github.com/amblerman/starterlibrary/tree/master/IBM_Cloud/modules/ibm_cloud_kubernetes_cluster"
   org = "${var.org}"
   space = "${var.space}" 
   cluster_name = "${var.cluster_name}" 
@@ -17,7 +20,7 @@ module "cluster" {
 }
 
 module "tiller" {
-  source  = "git::https://github.com/IBM-CAMHub-Open/starterlibrary.git?ref=2.2//IBM_Cloud/modules/helm_tiller"
+  source  = "git::https://github.com/amblerman/starterlibrary/tree/master/IBM_Cloud/helm-tiller"
   deploy_tiller = "${var.deploy_tiller}"
   cluster_name = "${var.cluster_name}"
   cluster_config = "${module.cluster.cluster_config}"
