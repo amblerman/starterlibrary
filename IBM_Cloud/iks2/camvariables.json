@@ -139,7 +139,7 @@
             "type": "string",
             "description": "Virtual network that allows secured communication between the worker nodes and the IBM-managed master node. Can be retrieved by running bx cs vlans <location>.",
             "hidden": false,
-            "default": "2639697",
+            "default": "2639693",
             "label": "Public VLAN",
             "secured": false,
             "required": false,
